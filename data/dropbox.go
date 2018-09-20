@@ -8,7 +8,7 @@ import (
 	"os/user"
 	"strings"
 
-	"code.google.com/p/goprotobuf/proto"
+	"github.com/golang/protobuf/proto"
 )
 
 var (
@@ -46,7 +46,12 @@ func (d *Dropbox) Init() error {
 		current_user.HomeDir + "/.dropbox/host.db",
 	)
 	if err != nil {
-		return err
+		d.BasePath = current_user.HomeDir + "/.samay"
+
+		// Create samay data folder
+		// TODO make sure user doesn't have folder already
+		os.Mkdir(d.BasePath, 0775)
+		return nil
 	}
 
 	// read bytes and get second line from host.db

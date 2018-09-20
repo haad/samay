@@ -3,6 +3,9 @@
 *.a
 *.so
 
+# Binary
+samay
+
 # Folders
 _obj
 _test

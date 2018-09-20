@@ -10,7 +10,7 @@ import (
 	"net/http/httputil"
 	"os/exec"
 
-	"code.google.com/p/goprotobuf/proto"
+	"github.com/golang/protobuf/proto"
 	"github.com/gorilla/mux"
 	"github.com/nexneo/samay/data"
 )
